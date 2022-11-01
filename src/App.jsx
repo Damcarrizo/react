@@ -1,6 +1,7 @@
 import "./App.css";
 import itemListContainer from "./components/itemlist/itemListContainer";
 import NavBar from "./components/NavBar/NavBar";
+import MyButton from "./components/mybutton/MyButton";
 
 function App() {
   let title = <h1> Fornituras </h1>
@@ -10,7 +11,7 @@ function App() {
   <>
   {title}
   <NavBar/>
-  <itemListContainer greeting="Hola"/>
+  <itemListContainer/>
   </>
   </header>
   );

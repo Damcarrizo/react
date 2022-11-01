@@ -1,11 +1,12 @@
 import React from 'react'
-import mybutton from '../mybutton/mybutton'
+import MyButton from '../mybutton/MyButton'
 
 
-function item() {
+function item(props) {
   return (
     <div>
-        <mybutton>hola </mybutton>
+      <h3>Hola</h3>
+      <MyButton text= "coni crack" />
     </div>
   )
 }

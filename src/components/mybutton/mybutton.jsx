@@ -1,13 +1,11 @@
 import React from 'react'
 
-// // function mybutton(props) {
+function MyButton(props) {
+        
+    
+  return (
+    <button style={{BackGroundColor: props.color }} className= "btn">{props.text}</button>
+  )
+  }
 
-//     function handleclick(){
-//         alert("click")
-//     }
-//   return (
-//     // <button onClick={handeClick}>mybutton</button>
-//   )
-// }
-
-// export default mybutton
+export default MyButton
