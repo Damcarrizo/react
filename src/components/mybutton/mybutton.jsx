@@ -4,7 +4,7 @@ function MyButton(props) {
         
     
   return (
-    <button style={{BackGroundColor: props.color }} className= "btn">{props.text}</button>
+    <button style={{backgroundColor: props.color }} className= "btn">{props.text}</button>
   )
   }
 

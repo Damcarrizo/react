@@ -1,14 +1,16 @@
-import React from 'react'
-import MyButton from '../mybutton/MyButton'
+import React from 'react';
+import MyButton from '../mybutton/MyButton';
+import "./item.css"
 
-
-function item(props) {
+function Item(props) {
   return (
     <div>
-      <h3>Hola</h3>
-      <MyButton text= "coni crack" />
+      <img src={props.imgUrl}/>
+      <p>{props.producto}</p>
+      <p>{props.precio}</p>
+      <MyButton text= "Agregar al Chango" color= "pink"/>
     </div>
   )
 }
 
-export default item
+export default Item
