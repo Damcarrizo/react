@@ -1,13 +1,16 @@
 import React from 'react';
+import productos from '../data/data';
 import MyButton from '../mybutton/MyButton';
 import "./item.css"
 
-function Item(props) {
+function Item({titulo,precio,descripcion}) {
   return (
     <div>
-      <img src={props.imgUrl}/>
-      <p>{props.producto}</p>
-      <p>{props.precio}</p>
+      <img src={productos.imgUrl}/>
+      <h3>{titulo}</h3>
+      <h4>{descripcion}</h4>
+      <p>${precio}</p>
+
       <MyButton text= "Agregar al Chango" color= "pink"/>
     </div>
   )
