@@ -1,9 +1,11 @@
 import React from 'react';
 import productos from '../data/data';
 import MyButton from '../mybutton/MyButton';
-import "./item.css"
+import "./item.css";
+import{Link} from "react-router-dom";
 
-function Item({titulo,precio,descripcion}) {
+function Item({titulo,precio,descripcion,id}) {
+  const urlDetail = `/detail/${id}`;
   return (
     <div>
       <img src={productos.imgUrl}/>
@@ -12,6 +14,9 @@ function Item({titulo,precio,descripcion}) {
       <p>${precio}</p>
 
       <MyButton text= "Agregar al Chango" color= "pink"/>
+      <Link to={urlDetail}>
+      <MyButton text= "Ver Mas" color= "Green"/>
+      </Link>
     </div>
   )
 }
