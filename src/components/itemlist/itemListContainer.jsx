@@ -19,8 +19,9 @@ function ItemListContainer() {
   }, [id]);
 
   return (
-    <div>
 
+
+<div className="cardList">
 {productos.map((productos)=>{
   return(
     <Item

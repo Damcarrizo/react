@@ -1,7 +1,7 @@
 const productos = [
     {
         id: 1,
-        titulo: "Perita N1",
+        titulo: "Perita N 1",
         precio: 250,
         descripcion: "Cierre de Plata",
         stock: 1000,
@@ -10,7 +10,7 @@ const productos = [
     },
     {
         id: 2,
-        titulo: "Perita N2",
+        titulo: "Perita N 2",
         precio: 400,
         descripcion: "Cierre de Plata",
         stock: 1000,
@@ -18,7 +18,7 @@ const productos = [
     },
     {
         id: 3,
-        titulo: "Perita N3",
+        titulo: "Perita N 3",
         precio: 610,
         descripcion: "Cierre de Plata",
         stock: 1000,
@@ -26,7 +26,7 @@ const productos = [
     },
     {
         id: 4,
-        titulo: "Perita N4",
+        titulo: "Perita N 4",
         precio: 1050,
         descripcion: "Cierre de Plata",
         stock: 1000,
@@ -34,6 +34,30 @@ const productos = [
     },
     {
         id: 5,
+        titulo: "Recto N 1",
+        precio: 280,
+        descripcion: "Cierre de Plata",
+        stock: 1000,
+        categoria: "cierres",
+    },
+    {
+        id: 6,
+        titulo: "Recto N 2",
+        precio: 315,
+        descripcion: "Cierre de Plata",
+        stock: 1000,
+        categoria: "cierres",
+    },
+    {
+        id: 7,
+        titulo: "Recto N 3",
+        precio: 520,
+        descripcion: "Cierre de Plata",
+        stock: 1000,
+        categoria: "Cierres",
+    },
+    {
+        id: 8,
         titulo: "Bolita N 2,5",
         precio: 35,
         descripcion: "Bolita de Plata",
@@ -41,7 +65,7 @@ const productos = [
         categoria: "bolita",
     },
     {
-        id: 6,
+        id: 9,
         titulo: "Bolita N 3",
         precio: 40,
         descripcion: "Bolita de Plata",
@@ -49,13 +73,29 @@ const productos = [
         categoria: "bolita",
     },
     {
-        id: 1,
+        id: 10,
         titulo: "Bolita N 3,5",
         precio: 45,
         descripcion: "Bolita de Plata",
         stock: 1000,
         categoria: "bolita",
-    }
+    },
+    {
+        id: 11,
+        titulo: "Bolita N 4",
+        precio: 58,
+        descripcion: "Bolita de Plata",
+        stock: 1000,
+        categoria: "bolita",
+    },
+    {
+        id: 12,
+        titulo: "Bolita N 5",
+        precio: 73,
+        descripcion: "Bolita de Plata",
+        stock: 1000,
+        categoria: "bolita",
+    },
 ];
 
 export default productos;

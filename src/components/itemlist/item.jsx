@@ -1,24 +1,29 @@
-import React from 'react';
-import productos from '../data/data';
-import MyButton from '../mybutton/MyButton';
+import React from "react";
+import productos from "../data/data";
+import MyButton from "../mybutton/MyButton";
 import "./item.css";
-import{Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function Item({titulo,precio,descripcion,id}) {
+function Item({ titulo, precio, descripcion, id }) {
   const urlDetail = `/detail/${id}`;
   return (
-    <div>
-      <img src={productos.imgUrl}/>
-      <h3>{titulo}</h3>
-      <h4>{descripcion}</h4>
-      <p>${precio}</p>
-
-      <MyButton text= "Agregar al Chango" color= "pink"/>
+    <div className="cardContainer">
+      <div className="card-img">
+        <img src={productos.imgUrl} />
+      </div>
+      <div className="card-detail">
+        <h3>{titulo}</h3>
+        <h4>{descripcion}</h4>
+        <p>${precio}</p>
+      </div>
+      <div className="card-button">
+      <MyButton text="Agregar al Chango" color="black" />
       <Link to={urlDetail}>
-      <MyButton text= "Ver Mas" color= "Green"/>
+        <MyButton text="Ver Mas" color="red" />
       </Link>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Item
+export default Item;
