@@ -2,6 +2,9 @@
 import {getSingleItem} from '../../components/Services/mockService';
 import { useEffect, useState } from 'react';
 import {useParams} from "react-router-dom";
+import ItemDetail from './ItemDetail';
+import "./itemDetail.css"
+
 
 function ItemDetailContainer() {
   const [productos, setProducto] = useState([])
@@ -14,14 +17,7 @@ async function getItemsAsync(){
 useEffect(()=>{
     getItemsAsync();
 },[]);
-    return (
-        <div>
-<img src={productos.imgUrl}/>
-      <h3>{productos.titulo}</h3>
-      <h4>{productos.precio}</h4>
-      <p>{productos.descripcion}</p>
-      </div>
-      );
+    return <ItemDetail product={productos}/>;
 }
 
 export default ItemDetailContainer

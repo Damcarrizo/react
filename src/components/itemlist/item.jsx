@@ -17,10 +17,9 @@ function Item({ titulo, precio, descripcion, id }) {
         <p>${precio}</p>
       </div>
       <div className="card-button">
-      <MyButton text="Agregar al Chango" color="black" />
-      <Link to={urlDetail}>
-        <MyButton text="Ver Mas" color="red" />
-      </Link>
+        <Link to={urlDetail}>
+          <MyButton text="Ver Mas" color="red" />
+        </Link>
       </div>
     </div>
   );
