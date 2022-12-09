@@ -21,7 +21,7 @@ const productos = [
         titulo: "Perita N 3",
         precio: 610,
         descripcion: "Cierre de Plata",
-        stock: 1000,
+        stock:1000,
         categoria: "cierres",
     },
     {

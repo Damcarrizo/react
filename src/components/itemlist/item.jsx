@@ -16,9 +16,9 @@ function Item({ titulo, precio, descripcion, id }) {
         <h4>{descripcion}</h4>
         <p>${precio}</p>
       </div>
-      <div className="card-button">
-        <Link to={urlDetail}>
-          <MyButton text="Ver Mas" color="red" />
+      <div>
+        <Link className="card-button" to={urlDetail}>
+          <MyButton>Ver Mas</MyButton>
         </Link>
       </div>
     </div>
