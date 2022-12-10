@@ -11,7 +11,7 @@ function CartWidget() {
   return (
     <div>
       <FontAwesomeIcon icon={faCartShopping} />
-    <span className='badge badge-warning' id='lblCartCount'>{miContext.itemsInCart}</span>
+    <span className='badge badge-warning' id='lblCartCount'>{miContext.itemsInCart()}</span>
     </div>
   );
 }

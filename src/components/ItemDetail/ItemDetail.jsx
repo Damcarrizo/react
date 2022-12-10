@@ -1,10 +1,15 @@
 import ItemContador from "../ItemContador/ItemContador";
 import "./itemDetail.css";
+import { useContext } from "react";
+import { cartContext } from "../../context/cartContext";
 
 function ItemDetail({ product }) {
+  
+  const {addToCart} = useContext(cartContext)
 
   function onAddToCArt(count) {
-    alert(`agregaste${count} al carro`);
+    alert(`agregaste ${count} al carro`);
+    addToCart(product,count);
   }
 
   return (
