@@ -7,11 +7,15 @@ import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
 
 function CartWidget() {
   const miContext = useContext(cartContext)
-  
+  const numCart = Number(miContext.itemsInCart())
+
   return (
     <div>
       <FontAwesomeIcon icon={faCartShopping} />
-    <span className='badge badge-warning' id='lblCartCount'>{miContext.itemsInCart()}</span>
+      {
+        numCart >=1?
+    <span className='badge badge-warning' id='lblCartCount'>{miContext.itemsInCart()}</span> : <span></span>
+}
     </div>
   );
 }

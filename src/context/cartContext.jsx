@@ -26,6 +26,19 @@ else{
 }
 }
 
+function clear(){
+    setCart([])
+}
+
+function removeItem(idEliminar){
+        let newCart = [...cart]; 
+        let itemAEliminar = cart.findIndex(productEliminar => productEliminar.id === idEliminar)
+        newCart.pop(itemAEliminar) 
+        setCart(newCart)
+        alert(`Producto ${idEliminar} eliminado`)
+
+}
+
 function itemsInCart() {
     let total = 0;
     cart.forEach((itemInCart) => (total = total + itemInCart.count));
@@ -36,7 +49,7 @@ function priceInCart(){
 
 }
     return(
-        <cartContext.Provider value={{addToCart,cart,itemsInCart}}>
+        <cartContext.Provider value={{addToCart,cart,itemsInCart,removeItem,clear}}>
             {children}
         </cartContext.Provider>
     )

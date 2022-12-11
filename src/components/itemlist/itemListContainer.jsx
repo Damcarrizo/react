@@ -1,40 +1,39 @@
 import { useState, useEffect } from "react";
-
-import Item from './item';
 import "./item.css";
 import {useParams} from "react-router-dom";
-import getItems from "../Services/mockService";
+import getItems, { getItemsByCategory } from "../Services/firestore";
+import ItemList from "./ItemList"
+import Loader from "../Loader/loader";
 
 function ItemListContainer() {
   const [productos, setProducts] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(true);
+  
   const { id } = useParams();
 
   async function getItemsAsync() {
+    if (!id) {
     let respuesta = await getItems(id);
     setProducts(respuesta);
+            
+  } else {
+      let respuesta = await getItemsByCategory(id)
+      setProducts(respuesta);
   }
+setIsLoading(false);
+}
 
-  useEffect(() => {
-    getItemsAsync();
+useEffect(
+  () => {
+      getItemsAsync();
   }, [id]);
 
-  return (
+if (isLoading)
+  return (<div><Loader /></div>)
 
+return (<ItemList productos={productos} />)
 
-<div className="cardList">
-{productos.map((productos)=>{
-  return(
-    <Item
-      key={productos.id}
-      id={productos.id}
-      titulo ={productos.titulo}
-      precio ={productos.precio}
-      descripcion={productos.descripcion}
-      />
-  )
-})}
-    </div>
-  )
 }
 
 export default ItemListContainer

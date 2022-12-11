@@ -4,7 +4,7 @@ import MyButton from "../mybutton/MyButton";
 import "./item.css";
 import { Link } from "react-router-dom";
 
-function Item({ titulo, precio, descripcion, id }) {
+function Item({ titulo, precio, descripcion, stock, id, descuento, color}) {
   const urlDetail = `/detail/${id}`;
   return (
     <div className="cardContainer">
@@ -14,7 +14,9 @@ function Item({ titulo, precio, descripcion, id }) {
       <div className="card-detail">
         <h3>{titulo}</h3>
         <h4>{descripcion}</h4>
-        <p>${precio}</p>
+        <p style={{color: descuento && "green"}}>${precio}</p>
+        {descuento && <small>Descuento: {descuento}</small>}
+        {stock <= 0 && <span>Sin stock disponible</span>}
       </div>
       <div>
         <Link className="card-button" to={urlDetail}>

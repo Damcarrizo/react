@@ -1,14 +1,18 @@
 import ItemContador from "../ItemContador/ItemContador";
 import "./itemDetail.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { cartContext } from "../../context/cartContext";
+import MyButton from "../mybutton/MyButton";
+import { Link } from "react-router-dom";
 
 function ItemDetail({ product }) {
+  const [isInCart, setIsInCart]= useState(false)
   
   const {addToCart} = useContext(cartContext)
 
   function onAddToCArt(count) {
     alert(`agregaste ${count} al carro`);
+    setIsInCart(count);
     addToCart(product,count);
   }
 
@@ -22,7 +26,12 @@ function ItemDetail({ product }) {
         <p>{product.descripcion}</p>
         <h4>$ {product.precio}</h4>
       </div>
+      {
+        isInCart?
+      <Link to="/cart"> <MyButton>Ir al Carrito</MyButton></Link>
+      :
       <ItemContador onAddToCArt={onAddToCArt} stock={product.stock} />
+    }
     </div>
   );
 }
