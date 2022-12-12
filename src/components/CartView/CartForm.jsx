@@ -66,7 +66,7 @@ export default function CartForm(props) {
         />
       </div>
 
-      <MyButton disabled={data.name === "" || data.phone === "" || data.email === ""}  type="submit" onClick = {(evt)=>props.onSubmit(evt,data)}>Finlizar Compra</MyButton>
+      <button disabled={data.name === "" || data.phone === "" || data.email === ""}  type= "submit" onClick = {(evt)=>props.onSubmit(evt,data)}>Finlizar Compra</button>
     </form>
   );
 }
