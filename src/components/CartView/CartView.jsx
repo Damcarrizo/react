@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import { cartContext } from '../../context/cartContext';
-import MyButton from '../mybutton/MyButton';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { createOrder } from '../Services/firestore';
@@ -42,7 +41,7 @@ function CartView() {
             <div>
               <h2>Total: $ {priceInCart()}</h2>
             </div>
-                <MyButton onClick={()=>clear()}>Vaciar Carrito</MyButton>
+                <button onClick={()=>clear()}>Vaciar Carrito</button>
                 <CartForm onSubmit = {handleCheckOut}/>
     </div>
   )
