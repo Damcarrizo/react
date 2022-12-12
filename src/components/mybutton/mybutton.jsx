@@ -11,6 +11,8 @@ function MyButton(props) {
   return (
     <div>
     <button
+    disabled={props.disabled}
+    type={props.type}
      onClick={handleClick}
      style={{backgroundColor: colorBtn}}
      className='btn'>

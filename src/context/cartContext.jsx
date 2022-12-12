@@ -46,10 +46,12 @@ function itemsInCart() {
   }
 
 function priceInCart(){
-
+    let totalPrice = 0;
+    cart.forEach((producto) => (totalPrice = totalPrice + producto.price*producto.cantidad));
+    return totalPrice;
 }
     return(
-        <cartContext.Provider value={{addToCart,cart,itemsInCart,removeItem,clear}}>
+        <cartContext.Provider value={{addToCart,cart,itemsInCart,removeItem,clear, priceInCart}}>
             {children}
         </cartContext.Provider>
     )

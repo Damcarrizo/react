@@ -3,13 +3,31 @@ import { cartContext } from '../../context/cartContext';
 import MyButton from '../mybutton/MyButton';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { createOrder } from '../Services/firestore';
+import {useNavigate} from "react-router-dom";
+import CartForm from './CartForm';
 
 
 
 function CartView() {
     const{ cart, removeItem, clear, priceInCart} = useContext(cartContext)
+    let navigate = useNavigate();
 
     if (cart.length === 0) return (<h1>Carrito Vacio</h1>)
+
+    async function handleCheckOut(evt,data){
+
+      const order = {
+        buyer: data,
+        items: cart,
+        total: 0,
+        date: new Date(),
+      };
+  
+      const orderId = await createOrder(order);
+      navigate(`/thankyou/${orderId}`);
+    }
+
   return (
     <div className='cart-container'>
         {
@@ -22,6 +40,7 @@ function CartView() {
             </div>       
                 ))}
                 <MyButton onClick={()=>clear()}>Vaciar Carrito</MyButton>
+                <CartForm onSubmit = {handleCheckOut}/>
     </div>
   )
 }
