@@ -20,7 +20,7 @@ function CartView() {
       const order = {
         buyer: data,
         items: cart,
-        total: 0,
+        total: priceInCart(),
         date: new Date(),
       };
   
@@ -39,6 +39,9 @@ function CartView() {
                 <button onClick={()=>removeItem(item.id)}><FontAwesomeIcon icon={faTrashCan}/></button>
             </div>       
                 ))}
+            <div>
+              <h2>Total: $ {priceInCart()}</h2>
+            </div>
                 <MyButton onClick={()=>clear()}>Vaciar Carrito</MyButton>
                 <CartForm onSubmit = {handleCheckOut}/>
     </div>

@@ -45,11 +45,14 @@ function itemsInCart() {
     return total;
   }
 
-function priceInCart(){
+  function priceInCart() {
     let totalPrice = 0;
-    cart.forEach((producto) => (totalPrice = totalPrice + producto.price*producto.cantidad));
+    cart.forEach(
+      (productos) =>
+        (totalPrice = totalPrice + productos.precio * productos.cantidad)
+    );
     return totalPrice;
-}
+  }
     return(
         <cartContext.Provider value={{addToCart,cart,itemsInCart,removeItem,clear, priceInCart}}>
             {children}
